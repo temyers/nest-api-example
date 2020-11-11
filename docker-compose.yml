@@ -1,0 +1,14 @@
+version: "2.3"
+services:
+  nest-api:
+      build:
+        context: .
+        dockerfile: Dockerfile
+      image: example/nest-api
+      environment:
+        - FOO=BAR
+        - DATABASE_USER=nowForSomethingCompletelyDifferent
+      ports:
+        - 3000:3000
+      # volumes:
+      #   - ${PWD}:/app
